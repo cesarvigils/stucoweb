@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Student Council - Dowal School</title>
+    <link rel="icon" type="image/x-icon" href="logodowal.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("YOUR_USER_ID");
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <img src="logo.png" alt="StuCo Logo" class="logo">
+            <button class="hamburger" id="hamburger">☰</button>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Get in Touch with Us</h1>
+            <p>We'd love to hear from you. Please fill out the form below.</p>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <form id="contact-form" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="form-response"></p>
+    </section>
+
+    <!-- Sección de Login / Registro -->
+    <section class="section" id="auth-section">
+        <h2 id="form-title">Login</h2>
+        <form id="user-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="email" id="email" placeholder="Email" style="display: none;">
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit" id="submit-btn">Login</button>
+            <p id="toggle-form">Don't have an account? <a href="#">Register here</a></p>
+        </form>
+        <p id="form-response-auth"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Student Council | Dowal School. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

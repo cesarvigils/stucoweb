@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal | Student Council - Dowal School</title>
+    <link rel="icon" type="image/x-icon" href="logodowal.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <img src="logo.png" alt="StuCo Logo" class="logo">
+            <h1 id="welcome-message">Welcome!</h1>
+            <button class="hamburger" id="hamburger">☰</button>
+            <ul id="nav-links">
+                <li><a href="/portal">Home</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><button id="logout-btn">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome To Our Portal </h1>
+            <p>Wanna Contact Us? Login Now!</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="createatic-container">
+            <form id="ticket-form">
+                <input type="email" name="email" id="email" placeholder="Email Address" required><br>
+                <input type="text" name="motivo" id="motivo" placeholder="Motivo" required><br>
+                <textarea name="descripcion" id="descripcion" placeholder="Descripción" required></textarea><br>
+                <select name="prioridad" id="prioridad" required>
+                    <option value="">Select Priority</option>
+                    <option value="Inmediato">Inmediato</option>
+                    <option value="No Inmediato">No Inmediato</option>
+                </select><br>
+                <button type="submit">Create Ticket</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>My Tickets</h2>
+            <button id="get-tickets">View My Tickets</button>
+            <div id="tickets-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Student Council | Dowal School. All rights reserved.</p>
+    </footer>
+
+    <script src="/source/js/tickets.js" defer></script>
+</body>
+</html>
