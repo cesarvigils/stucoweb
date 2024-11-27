@@ -21,6 +21,7 @@ const db = mysql.createConnection({
 db.connect(err => {
     if (err) {
         console.error('❌ Error al conectar a la base de datos:', err);
+        process.exit(1); // Salir si no se puede conectar a la base de datos
     } else {
         console.log('✅ Conexión exitosa a la base de datos MySQL');
     }
@@ -151,5 +152,5 @@ app.post('/tickets', (req, res) => {
 
 // Iniciar el servidor
 app.listen(port, () => {
-    console.log(`🌐 Servidor ejecutándose en http://localhost:${port}`);
+    console.log(`🌐 Servidor ejecutándose en http://0.0.0.0:${port}`);
 });
