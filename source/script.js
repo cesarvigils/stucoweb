@@ -31,7 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleFormLink = document.getElementById('toggle-form');
     let isLogin = true;
 
-    const BASE_URL = "https://stucoweb.onrender.com/"; // Cambia a la URL de tu backend en Render
+    // Cambia esta URL por la URL de tu backend desplegado en Render
+    const BASE_URL = "https://stucoweb.onrender.com";
 
     if (toggleFormLink) {
         toggleFormLink.addEventListener('click', (event) => {
