@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const bodyParser = require('body-parser');
@@ -5,15 +6,15 @@ const path = require('path');
 const crypto = require('crypto');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 // Configuración de la conexión a la base de datos MySQL
 const db = mysql.createConnection({
-    host: 'na04-sql.pebblehost.com',
-    user: 'customer_840153_miamirpusers',
-    password: '1bplTw=^ZM@MU^E4Fp@^4s2z',
-    database: 'customer_840153_miamirpusers',
-    port: 3306
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT || 3306
 });
 
 // Conectar a la base de datos
@@ -28,9 +29,10 @@ db.connect(err => {
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Servir archivos estáticos
 app.use(express.static(path.join(__dirname, 'source')));
 
-// Rutas para servir las páginas
+// Rutas para servir las páginas HTML
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'source', 'index.html'));
 });
