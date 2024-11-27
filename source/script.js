@@ -31,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleFormLink = document.getElementById('toggle-form');
     let isLogin = true;
 
+    const BASE_URL = "https://your-render-backend-url.onrender.com"; // Cambia a la URL de tu backend en Render
+
     if (toggleFormLink) {
         toggleFormLink.addEventListener('click', (event) => {
             event.preventDefault();
@@ -63,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            const url = isLogin ? 'http://localhost:3000/login' : 'http://localhost:3000/register';
+            const url = isLogin ? `${BASE_URL}/login` : `${BASE_URL}/register`;
             const data = { username, password };
             if (!isLogin) data.email = email;
 
@@ -102,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
             event.preventDefault();
 
             try {
-                const response = await fetch('http://localhost:3000/logout', { method: 'POST' });
+                const response = await fetch(`${BASE_URL}/logout`, { method: 'POST' });
                 if (!response.ok) {
                     throw new Error('Error logging out');
                 }
@@ -153,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const ticketData = { email, motivo, descripcion, prioridad };
 
             try {
-                const response = await fetch('http://localhost:3000/tickets', {
+                const response = await fetch(`${BASE_URL}/tickets`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(ticketData),
